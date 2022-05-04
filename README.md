@@ -1,3 +1,3 @@
 # malscan
-!(thumbnail.png)
+!(./thumbnail.png)
 simple malware scanner
