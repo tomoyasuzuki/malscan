@@ -32,6 +32,7 @@ def getSignatures():
             z.extract('full_sha256.txt')
         except Exception as e:
             print(f'%s{e}%s' % (Colors.Red, Colors.Endc))
+            sys.exit(1)
 
 
 def check(hash):
@@ -75,6 +76,7 @@ def scan(path):
                         infected_files.append(file)
             except Exception as e:
                 print(f'%s{e} at {file}%s' % (Colors.Red, Colors.Endc))
+                sys.exit(1)
 
     return (infected_count, total - infected_count, infected_files)
 
@@ -91,9 +93,11 @@ if __name__ == '__main__':
     getSignatures()
 
     infected, not_infected, files = scan(path)
+
     print("%s%s---------------------------- Output ----------------------------%s" % (Colors.Yellow, Colors.BOLD, Colors.Endc))
     print("%sInfected: %d%s" % (Colors.Red, infected, Colors.Endc))
     print("%sNot Infected: %d%s" % (Colors.Green, not_infected, Colors.Endc))
+    
     if infected != 0:
         print("%sInfected Files: " % (Colors.Red), end='')
         for file in files:
