@@ -1,4 +1,3 @@
-from inspect import CO_ASYNC_GENERATOR
 import sys
 import hashlib
 import requests
@@ -6,7 +5,6 @@ import argparse
 import os
 import zipfile
 import io
-import mimetypes
 
 class Colors:
     Black = '\033[30m'
@@ -82,8 +80,7 @@ def scan(path):
                         infected_count += 1
                         infected_files.append(file)
             except Exception as e:
-                m = mimetypes.guess_type(file)
-                print(f'%s{e} at {m}%s' % (Colors.Red, Colors.Endc))
+                print(f'%s{e} at {file}%s' % (Colors.Red, Colors.Endc))
 
     return (infected_count, total - infected_count, infected_files)
 
