@@ -7,7 +7,7 @@ very very simple malware scanner written in Python3.
 ```
 git clone https://github.com/tomoyasuzuki/malscan.git
 ```
-# How To Use
+## How To Use
 ```
 python main.py --path <target path>
 ```
