@@ -19,12 +19,6 @@ class Colors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
-class FileInfo:
-    def __init__(self, path):
-        self.path = path
-        self.infected = False
-        self.type = 'f'
-
 URL = 'https://bazaar.abuse.ch/export/txt/sha256/full/'
 HEADERS = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.36 (KHTML, like Gecko) '
            'Chrome/49.0.2623.112 Safari/537.36', 'Connection': 'keep-alive'}
